@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Task 1: document setup - UTF-8 encoding, language and page title -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Webpage</title>
+
+  <!-- Task 8: external stylesheet linked from the head -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ HEADER: name and course (Task 2) ============ -->
+  <header class="page-header">
+    <h1>Darkhan Tynyshtyk</h1>
+    <h2 class="course-subtitle">Web Technologies &mdash; Group SE-2523</h2>
+  </header>
+
+  <!-- ============ NAVIGATION (Tasks 2, 4, 12) ============ -->
+  <!-- Links point to IDs of the sections further down this same page -->
+  <nav class="site-nav">
+    <ul class="nav-list">
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#my-hobbies">Hobbies</a></li>
+      <li><a href="#class-schedule">Schedule</a></li>
+      <li><a href="#my-mood">Mood</a></li>
+      <li><a href="#contact-form">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="page-main">
+
+    <!-- ---- About Me: unique ID selector target (Tasks 2, 3, 8) ---- -->
+    <section id="about-me" class="content-section">
+      <h2>About Me</h2>
+
+      <div class="profile-card">
+        <!-- Task 3 + 13: local image with relative path and descriptive alt text -->
+        <img class="profile-photo"
+             src="images/avatar.jpg"
+             width="709" height="945"
+             alt="Portrait photo of Darkhan Tynyshtyk, a student with dark hair wearing a black t-shirt">
+
+        <p class="intro-text">
+          Hello! My name is Darkhan and I am a first-year IT student, and I also work as a
+          product designer five days a week. I am learning how the web is built, starting
+          with HTML for structure and CSS for presentation. This page is my very first
+          hand-written webpage: every tag and every style rule here was typed by me,
+          without any framework.
+        </p>
+      </div>
+
+      <h3>What I am studying right now</h3>
+      <p>
+        At the moment I am focused on semantic HTML, the CSS box model and writing selectors
+        that are easy to read. Because I design interfaces at work, being able to build them
+        in code myself is exactly the skill I want. My goal for this semester is to be able
+        to rebuild any simple layout from a screenshot using only my own CSS.
+      </p>
+    </section>
+
+    <!-- ---- Lists and external links (Task 3) ---- -->
+    <section id="my-hobbies" class="content-section">
+      <h2>Hobbies &amp; Favorite Websites</h2>
+
+      <h3>My hobbies, in order of preference</h3>
+      <ol class="hobby-list">
+        <li>Programming small web projects</li>
+        <li>Playing basketball with friends</li>
+        <li>Photography and photo editing</li>
+        <li>Reading science fiction</li>
+      </ol>
+
+      <h3>Websites I visit every week</h3>
+      <ul class="link-list">
+        <li>
+          <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">
+            MDN Web Docs
+          </a>
+          &mdash; the reference I use for every HTML tag and CSS property.
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/" target="_blank" rel="noopener">
+            W3Schools
+          </a>
+          &mdash; short examples I can try immediately in the editor.
+        </li>
+        <li>
+          <a href="https://github.com/" target="_blank" rel="noopener">
+            GitHub
+          </a>
+          &mdash; where I keep and publish my projects.
+        </li>
+      </ul>
+
+      <!-- Task 4: button with no JavaScript action required -->
+      <button class="action-button" type="button">Click Me</button>
+    </section>
+
+    <!-- ---- Schedule table (Task 5) ---- -->
+    <section id="class-schedule" class="content-section">
+      <h2>My Weekly Schedule</h2>
+      <p>The table below holds tabular data only; the page layout itself is done with CSS.</p>
+
+      <table class="schedule-table">
+        <caption>My work shifts during the autumn semester</caption>
+        <thead>
+          <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="work-row">
+            <td>Work &mdash; Product Designer</td>
+            <td>Monday</td>
+            <td>18:00 &ndash; 22:00</td>
+          </tr>
+          <tr class="work-row">
+            <td>Work &mdash; Product Designer</td>
+            <td>Tuesday</td>
+            <td>18:00 &ndash; 22:00</td>
+          </tr>
+          <tr class="work-row">
+            <td>Work &mdash; Product Designer</td>
+            <td>Wednesday</td>
+            <td>18:00 &ndash; 22:00</td>
+          </tr>
+          <tr class="work-row">
+            <td>Work &mdash; Product Designer</td>
+            <td>Thursday</td>
+            <td>18:00 &ndash; 22:00</td>
+          </tr>
+          <tr class="work-row">
+            <td>Work &mdash; Product Designer</td>
+            <td>Friday</td>
+            <td>18:00 &ndash; 22:00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="schedule-note">
+        I work as a product designer five days a week, Monday to Friday.
+      </p>
+    </section>
+
+    <!-- ---- Mood paragraph with emojis (Task 6) ---- -->
+    <section id="my-mood" class="content-section">
+      <h2>My Mood Today</h2>
+      <p class="mood-paragraph">
+        Today I feel curious and calm 😊. Writing this page took longer than I expected,
+        but seeing the styles finally apply was worth it 🚀. Now I am going to make some
+        tea and review the box model one more time ☕.
+      </p>
+    </section>
+
+    <!-- ---- Form with labelled controls (Task 7) ---- -->
+    <section id="contact-form" class="content-section">
+      <h2>Contact Me</h2>
+      <p>The form works in the browser; it does not send or store any data.</p>
+
+      <form class="contact-form">
+        <div class="form-row">
+          <label for="visitor-name">Name</label>
+          <input type="text" id="visitor-name" name="visitor-name"
+                 placeholder="Your name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="visitor-email">Email</label>
+          <input type="email" id="visitor-email" name="visitor-email"
+                 placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="favorite-color">Favorite Color</label>
+          <input type="color" id="favorite-color" name="favorite-color" value="#2f6fb3">
+        </div>
+
+        <button class="action-button" type="submit">Submit</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER (Task 2) ============ -->
+  <footer class="page-footer">
+    <p>&copy; 2026 Darkhan Tynyshtyk &mdash; Assignment 1, HTML &amp; CSS Basics.</p>
+  </footer>
+
+</body>
+</html>

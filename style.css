@@ -1,0 +1,369 @@
+/* =========================================================
+   style.css - Assignment 1: HTML & CSS Basics
+   Author: Darkhan Tynyshtyk
+
+   Palette (Task 10):
+     deep navy   #1f3a5f  - headings and header background
+     medium blue #2f6fb3  - links, buttons, accents
+     light blue  #eaf1f8  - section backgrounds
+     page cream  #f7f7f2  - page background
+     dark grey   #2b2b2b  - body text
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. ELEMENT SELECTORS (Task 8) - general styling by tag
+   --------------------------------------------------------- */
+
+body {
+  /* Task 9: standard font stack, readable size and line height */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2b2b2b;
+  background-color: #f7f7f2;
+
+  /* Task 11: remove the browser default margin, then center the page */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 8px 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f3a5f;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2f6fb3;
+  margin-bottom: 6px;
+}
+
+p {
+  /* Body text is clearly distinct from the headings above */
+  font-weight: 400;
+  text-align: left;
+  margin: 0 0 14px 0;
+}
+
+/* Task 9: custom link color and text decoration */
+a {
+  color: #2f6fb3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #1f3a5f;
+  text-decoration: underline;
+}
+
+/* Task 12: visible keyboard focus on every interactive element */
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid #e08a1e;
+  outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   2. PAGE HEADER AND FOOTER (Tasks 10, 11)
+   --------------------------------------------------------- */
+
+.page-header {
+  background-color: #1f3a5f;
+  color: #ffffff;
+  text-align: center;
+
+  /* Task 11: padding creates breathing room inside the header box */
+  padding: 34px 20px;
+  border-bottom: 5px solid #2f6fb3;
+}
+
+.course-subtitle {
+  /* Overrides the global h2 color so it stays readable on dark navy */
+  color: #cfe0f2;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.page-footer {
+  background-color: #1f3a5f;
+  color: #cfe0f2;
+  text-align: center;
+  padding: 18px 20px;
+  margin-top: 40px;
+  border-top: 5px solid #2f6fb3;
+}
+
+.page-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+
+/* ---------------------------------------------------------
+   3. NAVIGATION (Tasks 8, 12)
+   --------------------------------------------------------- */
+
+.site-nav {
+  background-color: #2f6fb3;
+  padding: 12px 20px;
+}
+
+.nav-list {
+  /* Remove bullets and default indent, then center the row of links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-list li {
+  /* inline-block keeps the links on one line with real spacing between them */
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* DESCENDANT SELECTOR (Task 8): only the <a> elements inside .site-nav */
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Task 12: clearly visible hover state */
+.site-nav a:hover {
+  background-color: #1f3a5f;
+  border-color: #cfe0f2;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   4. MAIN CONTENT AND SECTIONS (Task 11 - box model)
+   --------------------------------------------------------- */
+
+.page-main {
+  /* Width setting: content stays readable instead of stretching edge to edge */
+  max-width: 900px;
+  margin: 30px auto;   /* auto left/right margins center the block */
+  padding: 0 20px;
+}
+
+/* CLASS SELECTOR (Task 8): reusable card styling for every section */
+.content-section {
+  background-color: #ffffff;
+  border: 1px solid #d7ddE5;
+  border-left: 6px solid #2f6fb3;   /* accent border on one side */
+  border-radius: 6px;
+
+  padding: 24px;        /* space inside the box   */
+  margin-bottom: 26px;  /* space between the boxes */
+}
+
+/* ID SELECTOR (Task 8): one unique element on the page */
+#about-me {
+  background-color: #eaf1f8;
+  border-left-color: #1f3a5f;
+}
+
+
+/* ---------------------------------------------------------
+   5. PROFILE CARD AND IMAGE (Tasks 8, 13)
+   --------------------------------------------------------- */
+
+.profile-card {
+  padding: 16px;
+  margin-bottom: 18px;
+  background-color: #ffffff;
+  border: 1px dashed #9fb8d2;
+  border-radius: 6px;
+}
+
+.profile-photo {
+  /* Task 13: fixed width with height:auto keeps the photo proportional.
+     The source photo is 709x945 (3:4 portrait), so 170px wide renders
+     about 227px tall - no stretching and no clipping. */
+  width: 170px;
+  height: auto;
+  border: 4px solid #2f6fb3;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(31, 58, 95, 0.3);
+  background-color: #ffffff;
+
+  /* float lets the paragraph wrap beside the photo without Flexbox */
+  float: left;
+  margin: 0 20px 12px 0;
+}
+
+.intro-text {
+  font-size: 1.02rem;
+  text-align: justify;
+}
+
+/* Stop the float from leaking into the next heading */
+.profile-card::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/* ---------------------------------------------------------
+   6. LISTS (Task 11)
+   --------------------------------------------------------- */
+
+.hobby-list,
+.link-list {
+  padding-left: 26px;
+  margin-bottom: 18px;
+}
+
+.hobby-list li,
+.link-list li {
+  margin-bottom: 7px;
+}
+
+
+/* ---------------------------------------------------------
+   7. SCHEDULE TABLE (Tasks 10, 11)
+   --------------------------------------------------------- */
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.schedule-table caption {
+  caption-side: top;
+  text-align: left;
+  font-style: italic;
+  color: #55606b;
+  padding-bottom: 8px;
+}
+
+/* Descendant-style targeting of the cells inside the table */
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #b9c6d4;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.schedule-table th {
+  background-color: #1f3a5f;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Zebra striping keeps long rows easy to follow */
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #eaf1f8;
+}
+
+/* Work shifts are marked with their own class, which gives the first
+   column an accent border and a heavier weight. */
+.work-row td:first-child {
+  font-weight: 600;
+  color: #1f3a5f;
+  border-left: 4px solid #2f6fb3;
+}
+
+.schedule-note {
+  font-size: 0.93rem;
+  color: #55606b;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   8. MOOD PARAGRAPH (Tasks 6, 10)
+   --------------------------------------------------------- */
+
+.mood-paragraph {
+  background-color: #fff6e0;
+  border: 1px solid #e0c98a;
+  border-radius: 6px;
+  padding: 16px 18px;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   9. FORM AND BUTTONS (Tasks 7, 12 - optional styling)
+   --------------------------------------------------------- */
+
+.contact-form {
+  max-width: 420px;
+}
+
+.form-row {
+  margin-bottom: 16px;
+}
+
+/* Descendant selector: labels inside the contact form */
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  color: #1f3a5f;
+  margin-bottom: 5px;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid #b9c6d4;
+  border-radius: 4px;
+  background-color: #ffffff;
+
+  /* Keeps padding and border inside the declared width */
+  box-sizing: border-box;
+}
+
+.contact-form input[type="color"] {
+  /* A color swatch does not need the full row width */
+  width: 90px;
+  height: 42px;
+  padding: 3px;
+}
+
+.action-button {
+  background-color: #2f6fb3;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+
+  padding: 11px 26px;
+  border: 2px solid #1f3a5f;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.action-button:hover {
+  background-color: #1f3a5f;
+}
